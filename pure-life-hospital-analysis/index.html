@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pure Life Hospital | Business Analysis of Patient Records</title>
+<meta name="description" content="Health intelligence analysis of Pure Life Hospital patient and operational records: revenue, admissions, diagnoses, mortality, length of stay and outcomes.">
+<style>
+:root{--bg:#f4f8fa;--card:#fff;--text:#14212b;--muted:#5d6f7c;--line:#dde7ec;--teal:#0e9bb5;--navy:#0a2a52;--purple:#7b3fa0;--green:#16a34a;--amber:#d97706}
+@media (prefers-color-scheme:dark){:root{--bg:#0a1722;--card:#112332;--text:#e7f0f5;--muted:#9fb3c0;--line:#1f3a4d;--teal:#3cc4de;--navy:#071a33;--purple:#b57ad8;--green:#4ade80;--amber:#fbbf24}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.hero{background:linear-gradient(160deg,#2aa8c4 0%,#0b4a7a 55%,#071a33 100%);color:#fff;padding:36px 20px 44px}
+.hero .in{max-width:1050px;margin:auto;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.hero img{width:150px;height:150px;border-radius:14px;background:#f7f4ee;flex:none}
+.hero h1{margin:0 0 8px;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;letter-spacing:.02em;text-transform:uppercase;font-weight:500}
+.hero p{margin:0 0 10px;max-width:680px;opacity:.95}
+.hero small{opacity:.85;letter-spacing:.06em;text-transform:uppercase}
+main{max-width:1050px;margin:auto;padding:0 20px 40px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:-26px 0 26px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.kpi span{display:block;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.kpi b{font-size:1.7rem;color:var(--teal)}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:16px 0}
+section.card h2{margin:0 0 4px;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em;color:var(--navy)}
+@media (prefers-color-scheme:dark){section.card h2{color:var(--teal)}}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);font-weight:700;margin-bottom:6px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;align-items:start}
+h3{margin:14px 0 4px;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+ul{margin:4px 0 0;padding-left:20px}
+li{margin:3px 0}
+.bar{display:grid;grid-template-columns:170px 1fr 62px;gap:10px;align-items:center;margin:9px 0;font-size:.92rem}
+.bar .track{height:20px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar .fill{height:100%;border-radius:6px;background:var(--teal)}
+.bar .v{text-align:right;font-weight:700}
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;margin:12px 0 4px}
+.months div{text-align:center;padding:10px 0;border-radius:8px;font-size:.85rem;background:var(--line);color:var(--muted)}
+.months .dip{background:#fde8e6;color:#b42318;font-weight:700}
+.months .peak{background:#dcfce7;color:#166534;font-weight:700}
+@media (prefers-color-scheme:dark){.months .dip{background:#4a1d1a;color:#fca5a5}.months .peak{background:#12351f;color:#86efac}}
+.legend{font-size:.82rem;color:var(--muted)}
+.big{font-size:2.6rem;font-weight:700;line-height:1.1;color:var(--teal)}
+.progress{height:26px;border-radius:8px;overflow:hidden;display:flex;background:var(--line);margin:10px 0 6px}
+.progress i{display:block;height:100%;background:var(--green)}
+.progress i+i{background:var(--amber)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.links a{padding:9px 16px;border-radius:999px;background:var(--teal);color:#fff;text-decoration:none;font-weight:600}
+.links a.alt{background:transparent;color:var(--teal);border:1px solid var(--teal)}
+footer{max-width:1050px;margin:auto;padding:0 20px 40px;color:var(--muted);font-size:.85rem}
+@media (max-width:560px){.bar{grid-template-columns:110px 1fr 50px}.months{grid-template-columns:repeat(6,1fr)}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="in">
+<img src="assets/logo.png" alt="Pure Life Hospital logo">
+<div>
+<h1>Pure Life Hospital<br><span style="font-size:.6em">Business analysis of patient records</span></h1>
+<p>As a Health Intelligence professional, I analysed the hospital's patient and operational records to identify performance gaps, recommend strategy, and give leadership actionable insight to prevent operational or financial decline.</p>
+<small>Harrison Baffoe-Mensah &middot; Health Intelligence</small>
+</div></div></header>
+
+<main>
+<div class="kpis">
+<div class="kpi"><span>Revenue</span><b>$294.03M</b></div>
+<div class="kpi"><span>Admissions</span><b>5,000</b></div>
+<div class="kpi"><span>Avg length of stay</span><b>3.56 days</b></div>
+<div class="kpi"><span>Mortality rate</span><b>2.22%</b></div>
+</div>
+
+<section class="card">
+<span class="tag">Executive summary</span>
+<h2>Good outcomes, concentrated demand</h2>
+<p>The hospital generated about <b>$294.03M</b> in revenue from <b>5,000 admissions</b>, with an average length of stay of <b>3.56 days</b> and a mortality rate of <b>2.22%</b>. Most patients are successfully discharged, which points to generally positive clinical outcomes. However, demand is concentrated in specific diagnoses and visit types, creating resource-allocation and capacity-planning challenges.</p>
+</section>
+
+<section class="card">
+<span class="tag">Finding 1</span>
+<h2>Outpatient services drive hospital activity</h2>
+<div class="cols"><div>
+<div class="bar"><span>Outpatient</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v">2.5K</span></div>
+<div class="bar"><span>Inpatient</span><div class="track"><div class="fill" style="width:60%"></div></div><span class="v">1.5K</span></div>
+<div class="bar"><span>Emergency</span><div class="track"><div class="fill" style="width:40%"></div></div><span class="v">1.0K</span></div>
+<p class="legend">Admissions by visit type</p>
+</div><div>
+<h3>Business interpretation</h3>
+<p>Outpatient visits are about <b>50% of all admissions</b>, making them the hospital's primary service channel.</p>
+<h3>Recommendation</h3>
+<ul><li>Prioritise staffing and scheduling for outpatient departments.</li><li>Expand outpatient capacity during peak periods.</li><li>Use appointment optimisation to cut wait times and improve throughput.</li></ul>
+</div></div>
+</section>
+
+<section class="card">
+<span class="tag">Finding 2</span>
+<h2>Revenue fluctuates across the year</h2>
+<div class="months" aria-label="Months with revenue dips and peaks">
+<div>1</div><div class="dip">2</div><div>3</div><div class="dip">4</div><div>5</div><div class="peak">6</div><div class="dip">7</div><div>8</div><div>9</div><div>10</div><div class="peak">11</div><div>12</div>
+</div>
+<p class="legend">Month number &middot; red = revenue dip, green = revenue peak (pattern from the monthly revenue trend)</p>
+<div class="cols"><div>
+<h3>Business interpretation</h3>
+<p>The hospital experiences seasonal fluctuations in revenue generation.</p>
+</div><div>
+<h3>Recommendation</h3>
+<ul><li>Investigate the causes of low-performing months.</li><li>Align staffing and operating budgets with seasonal demand.</li><li>Run preventive-care campaigns in historically slower periods.</li></ul>
+</div></div>
+</section>
+
+<section class="card">
+<span class="tag">Finding 3</span>
+<h2>Digestive disorders are the largest admission category</h2>
+<div class="cols"><div>
+<div class="bar"><span>Digestive System</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v">873</span></div>
+<div class="bar"><span>Infectious &amp; Parasitic</span><div class="track"><div class="fill" style="width:79.3%"></div></div><span class="v">692</span></div>
+<div class="bar"><span>Cardiovascular</span><div class="track"><div class="fill" style="width:63.5%"></div></div><span class="v">554</span></div>
+<div class="bar"><span>Malignant Neoplasms</span><div class="track"><div class="fill" style="width:62.5%"></div></div><span class="v">546</span></div>
+<p class="legend">Top diagnosis categories by admissions</p>
+</div><div>
+<h3>Business interpretation</h3>
+<p>Digestive disorders generate the highest patient volume and likely consume a significant share of resources.</p>
+<h3>Recommendation</h3>
+<ul><li>Review staffing levels in Gastroenterology.</li><li>Develop preventive health-education programmes.</li><li>Create specialist care pathways to improve treatment efficiency.</li></ul>
+</div></div>
+</section>
+
+<section class="card">
+<span class="tag">Finding 4</span>
+<h2>Mortality rate needs department-level investigation</h2>
+<div class="big">2.22%</div>
+<p>Current mortality rate across all admissions. Breaking it down by department and diagnosis would show where to focus clinical review.</p>
+</section>
+
+<section class="card">
+<span class="tag">Finding 5</span>
+<h2>Average length of stay appears efficient</h2>
+<div class="big">3.56 days</div>
+<p>A relatively short stay may indicate efficient patient management and good bed turnover. Leadership should still check whether shorter stays are linked to readmissions.</p>
+</section>
+
+<section class="card">
+<span class="tag">Finding 6</span>
+<h2>Strong discharge performance</h2>
+<div class="progress" role="img" aria-label="About 85 percent discharged"><i style="width:85%"></i><i style="width:15%"></i></div>
+<p class="legend">Approximately 85% discharged (green); the remainder are admitted, transferred or deceased (amber).</p>
+<p>The majority of patients complete treatment successfully.</p>
+</section>
+
+<section class="card">
+<span class="tag">Conclusion</span>
+<h2>Where to act</h2>
+<p>Pure Life Hospital generated $294.03M from 5,000 admissions while keeping mortality low at 2.22% and length of stay at 3.56 days. Outpatient services account for half of all admissions and are the main demand driver. Digestive system disorders are the largest diagnostic category, an opportunity for targeted resource allocation and preventive care.</p>
+<div class="links">
+<a href="presentation/Pure_Life_Hospital_Presentation.pdf">View the presentation (PDF)</a>
+<a class="alt" href="presentation/Pure_Life_Hospital_Presentation.pptx">Download PowerPoint</a>
+</div>
+</section>
+</main>
+<footer>Figures are taken from the Pure Life Hospital analysis presentation, built on a Power BI report of the hospital's patient records.</footer>
+</body>
+</html>
